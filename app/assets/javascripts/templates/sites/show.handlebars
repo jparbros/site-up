@@ -1,0 +1,20 @@
+<h1>
+  {{content.name}} 
+  <small>
+    {{#if content.statusOk }}
+      <span class="status-ok"></span>
+    {{else}}
+      <span class="status-fail"></span>
+    {{/if}}
+    {{content.url}}
+  </small>
+  {{#linkTo 'sites.edit' content class="delete-btn"}} Delete {{/linkTo}}
+  {{#linkTo 'sites.edit' content class="edit-btn"}} Edit {{/linkTo}}
+</h1>
+
+<div class="row">
+  <div class="col-lg-12">
+    <div id="chart"></div>
+    {{view SiteUp.GraphView dataBinding=content.statusesToChart siteNameBinding=content.name}}
+  </div>
+</div>

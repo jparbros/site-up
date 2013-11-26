@@ -1,0 +1,24 @@
+<div class="main-container">
+  <div class="sidebar">
+    <div class="well">
+      <h3> Sites <small>{{#linkTo 'sites.new' class="btn btn-primary pull-right"}} New Site {{/linkTo}}</small></h3>
+      <ul class="menu">
+        {{#each site in controller.content}}
+          <li class="menu-element">
+            {{#if site.statusOk }}
+              <span class="status-ok"></span>
+            {{else}}
+              <span class="status-fail"></span>
+            {{/if}}
+            {{# linkTo 'sites.show' site}} {{site.name}} {{/linkTo}}
+          </li>
+        {{else}}
+          <li>There is not sites yet.</li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+  <div class="content">
+    {{outlet}}
+  </div>
+</div>

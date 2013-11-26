@@ -1,0 +1,47 @@
+.main-container {
+  @include make-row();
+  
+  .sidebar {
+    @include make-column(3);
+    
+    .menu {
+      @extend .list-unstyled;
+      
+      .menu-element {
+        margin-bottom: 5px;
+      }
+    }
+  }
+  
+  .content {
+    @include make-column(9);
+  }
+}
+
+.status-ok {
+  @extend .glyphicon; 
+  @extend  .glyphicon-ok-circle;
+  color: #60c078;
+}
+
+.status-fail {
+  @extend .glyphicon; 
+  @extend .glyphicon-ban-circle;
+  color: #c06078;
+}
+
+
+h1 {
+  .delete-btn {
+    @extend .btn; 
+    @extend .btn-danger; 
+    @extend .pull-right;
+  }
+
+  .edit-btn {
+    @extend .btn; 
+    @extend .btn-primary; 
+    @extend .pull-right;
+    margin-right: 10px;
+  }
+}
